@@ -1537,9 +1537,6 @@ static irqreturn_t dma_ccerr_handler(int irq, void *data)
 
 	dev_vdbg(ecc->dev, "dma_ccerr_handler\n");
 
-	if (!edma_error_pending(ecc))
-		return IRQ_NONE;
-
 	while (1) {
 		/* Event missed register(s) */
 		for (j = 0; j < 2; j++) {
